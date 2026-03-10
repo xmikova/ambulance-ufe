@@ -9,9 +9,10 @@ declare global {
   shadow: true,
 })
 export class PmiAmbulanceWlApp {
-    @State() private relativePath = "";
-
+  @State() private relativePath = "";
   @Prop() basePath: string="";
+  @Prop() apiBase: string;
+  @Prop() ambulanceId: string;
 
   componentWillLoad() {
     const baseUri = new URL(this.basePath, document.baseURI || "/").pathname;
@@ -54,11 +55,12 @@ export class PmiAmbulanceWlApp {
         ? <pmi-ambulance-wl-editor entry-id={entryId}
             oneditor-closed={ () => navigate("./list")} >
           </pmi-ambulance-wl-editor>
-        : <pmi-ambulance-wl-list
+          : <pmi-ambulance-wl-list
+            api-base={this.apiBase}
+            ambulance-id={this.ambulanceId}
             onentry-clicked={ (ev: CustomEvent<string>)=> navigate("./entry/" + ev.detail) } >
           </pmi-ambulance-wl-list>
         }
-
       </Host>
     );
   }

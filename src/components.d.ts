@@ -7,6 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface PmiAmbulanceWlApp {
+        "ambulanceId": string;
+        "apiBase": string;
         /**
           * @default ""
          */
@@ -16,6 +18,8 @@ export namespace Components {
         "entryId": string;
     }
     interface PmiAmbulanceWlList {
+        "ambulanceId": string;
+        "apiBase": string;
     }
 }
 export interface PmiAmbulanceWlEditorCustomEvent<T> extends CustomEvent<T> {
@@ -75,6 +79,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface PmiAmbulanceWlApp {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         /**
           * @default ""
          */
@@ -85,20 +91,28 @@ declare namespace LocalJSX {
         "onEditor-closed"?: (event: PmiAmbulanceWlEditorCustomEvent<string>) => void;
     }
     interface PmiAmbulanceWlList {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         "onEntry-clicked"?: (event: PmiAmbulanceWlListCustomEvent<string>) => void;
     }
 
     interface PmiAmbulanceWlAppAttributes {
         "basePath": string;
+        "apiBase": string;
+        "ambulanceId": string;
     }
     interface PmiAmbulanceWlEditorAttributes {
         "entryId": string;
+    }
+    interface PmiAmbulanceWlListAttributes {
+        "apiBase": string;
+        "ambulanceId": string;
     }
 
     interface IntrinsicElements {
         "pmi-ambulance-wl-app": Omit<PmiAmbulanceWlApp, keyof PmiAmbulanceWlAppAttributes> & { [K in keyof PmiAmbulanceWlApp & keyof PmiAmbulanceWlAppAttributes]?: PmiAmbulanceWlApp[K] } & { [K in keyof PmiAmbulanceWlApp & keyof PmiAmbulanceWlAppAttributes as `attr:${K}`]?: PmiAmbulanceWlAppAttributes[K] } & { [K in keyof PmiAmbulanceWlApp & keyof PmiAmbulanceWlAppAttributes as `prop:${K}`]?: PmiAmbulanceWlApp[K] };
         "pmi-ambulance-wl-editor": Omit<PmiAmbulanceWlEditor, keyof PmiAmbulanceWlEditorAttributes> & { [K in keyof PmiAmbulanceWlEditor & keyof PmiAmbulanceWlEditorAttributes]?: PmiAmbulanceWlEditor[K] } & { [K in keyof PmiAmbulanceWlEditor & keyof PmiAmbulanceWlEditorAttributes as `attr:${K}`]?: PmiAmbulanceWlEditorAttributes[K] } & { [K in keyof PmiAmbulanceWlEditor & keyof PmiAmbulanceWlEditorAttributes as `prop:${K}`]?: PmiAmbulanceWlEditor[K] };
-        "pmi-ambulance-wl-list": PmiAmbulanceWlList;
+        "pmi-ambulance-wl-list": Omit<PmiAmbulanceWlList, keyof PmiAmbulanceWlListAttributes> & { [K in keyof PmiAmbulanceWlList & keyof PmiAmbulanceWlListAttributes]?: PmiAmbulanceWlList[K] } & { [K in keyof PmiAmbulanceWlList & keyof PmiAmbulanceWlListAttributes as `attr:${K}`]?: PmiAmbulanceWlListAttributes[K] } & { [K in keyof PmiAmbulanceWlList & keyof PmiAmbulanceWlListAttributes as `prop:${K}`]?: PmiAmbulanceWlList[K] };
     }
 }
 export { LocalJSX as JSX };
