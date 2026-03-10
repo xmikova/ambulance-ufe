@@ -7,11 +7,11 @@ describe('pmi-ambulance-wl-app', () => {
     const page = await newSpecPage({
       url: `http://localhost/entry/@new`,
       components: [PmiAmbulanceWlApp],
-      html: `<<pfx>-ambulance-wl-app base-path="/"></<pfx>-ambulance-wl-app>`,
+      html: `<pmi-ambulance-wl-app base-path="/"></pmi-ambulance-wl-app>`,
     });
     page.win.navigation = new EventTarget()
     const child = await page.root.shadowRoot.firstElementChild;
-    expect(child.tagName.toLocaleLowerCase()).toEqual ("<pfx>-ambulance-wl-editor");
+    expect(child.tagName.toLocaleLowerCase()).toEqual ("pmi-ambulance-wl-editor");
 
   });
 
@@ -19,10 +19,10 @@ describe('pmi-ambulance-wl-app', () => {
     const page = await newSpecPage({
       url: `http://localhost/ambulance-wl/`,
       components: [PmiAmbulanceWlApp],
-      html: `<<pfx>-ambulance-wl-app base-path="/ambulance-wl/"></<pfx>-ambulance-wl-app>`,
+      html: `<pmi-ambulance-wl-app base-path="/ambulance-wl/"></pmi-ambulance-wl-app>`,
     });
     page.win.navigation = new EventTarget()
     const child = await page.root.shadowRoot.firstElementChild;
-    expect(child.tagName.toLocaleLowerCase()).toEqual("<pfx>-ambulance-wl-list");
+    expect(child.tagName.toLocaleLowerCase()).toEqual("pmi-ambulance-wl-list");
   });
 });
