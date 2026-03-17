@@ -10,11 +10,13 @@ export namespace Components {
         "ambulanceId": string;
         "apiBase": string;
         /**
-          * @default ""
+          * @default ''
          */
         "basePath": string;
     }
     interface PmiAmbulanceWlEditor {
+        "ambulanceId": string;
+        "apiBase": string;
         "entryId": string;
     }
     interface PmiAmbulanceWlList {
@@ -82,11 +84,13 @@ declare namespace LocalJSX {
         "ambulanceId"?: string;
         "apiBase"?: string;
         /**
-          * @default ""
+          * @default ''
          */
         "basePath"?: string;
     }
     interface PmiAmbulanceWlEditor {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         "entryId"?: string;
         "onEditor-closed"?: (event: PmiAmbulanceWlEditorCustomEvent<string>) => void;
     }
@@ -103,6 +107,8 @@ declare namespace LocalJSX {
     }
     interface PmiAmbulanceWlEditorAttributes {
         "entryId": string;
+        "ambulanceId": string;
+        "apiBase": string;
     }
     interface PmiAmbulanceWlListAttributes {
         "apiBase": string;
