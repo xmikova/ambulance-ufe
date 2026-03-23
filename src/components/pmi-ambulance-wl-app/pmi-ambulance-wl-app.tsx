@@ -1,4 +1,4 @@
-import { Component, Host, Prop, State, h } from '@stencil/core';
+import { Component, Host, Prop, State, h, render } from '@stencil/core';
 
 declare global {
   interface Window {
@@ -39,6 +39,7 @@ export class PmiAmbulanceWlApp {
   }
 
   render() {
+    console.debug("<pfx>-ambulance-wl-app.render() - path: %s", this.relativePath);
     let element = 'list';
     let entryId = '@new';
 
